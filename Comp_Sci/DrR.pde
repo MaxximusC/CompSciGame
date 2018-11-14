@@ -1,0 +1,3 @@
+class DrR extends NPC {
+  
+}
