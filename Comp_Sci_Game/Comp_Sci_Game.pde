@@ -1,4 +1,4 @@
-//Player player = new Player(400, 400);
+Player player = new Player();
 ArrayList<Obstacles> tables = new ArrayList<Obstacles>();
 ArrayList<NPC> npc = new ArrayList<NPC>();
 boolean go = true;
@@ -20,6 +20,9 @@ void setup() {
   tables.add(new Obstacles(60, 492, 120, 420)); // Index 9
   tables.add(new Obstacles(340, 492, 120, 420)); // Index 10
   tables.add(new Obstacles(600, 492, 120, 420)); // Index 11
+  for (int i = 0; i < 15; i++){
+    npc.add(new NPC());
+  }
 }
 void draw() {
   fill(0, 75, 75);
@@ -27,4 +30,10 @@ void draw() {
   for (int i = 0; i < tables.size(); i++) {
     tables.get(i).display();
   }
+  for (int i = 0; i < npc.size(); i++){
+    npc.get(i).move();
+    npc.get(i).display();
+  }
+  player.move();
+  player.display();
 }
